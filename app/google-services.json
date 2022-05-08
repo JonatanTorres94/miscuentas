@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "112267561086",
+    "project_id": "mis-cuentas-aa4f7",
+    "storage_bucket": "mis-cuentas-aa4f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112267561086:android:8ce829c2da84c688ff702f",
+        "android_client_info": {
+          "package_name": "com.example.miscuentas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112267561086-hg0q8l2022aqquoekg3funbamgfc6a93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl_YA8cZP9XRAyRQsq-PrnEAy6yu5bSWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112267561086-hg0q8l2022aqquoekg3funbamgfc6a93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
