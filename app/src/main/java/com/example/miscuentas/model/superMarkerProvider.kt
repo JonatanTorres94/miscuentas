@@ -2,7 +2,7 @@ package com.example.miscuentas.model
 
 class superMarkerProvider {
     companion object {
-        var markerList = listOf<SuperMarkerModel>(
+        var markerList = mutableListOf<SuperMarkerModel>(
             SuperMarkerModel("Arroz",80.73),
             SuperMarkerModel("Mayonesa",120.82),
             SuperMarkerModel("Queso",326.36),
@@ -24,4 +24,9 @@ class superMarkerProvider {
 
         )
     }
+
+
+}
+
+private fun <E> MutableList<E>.add(name: String, precio: Double) {
 }
