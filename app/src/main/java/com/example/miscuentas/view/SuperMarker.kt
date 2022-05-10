@@ -48,7 +48,7 @@ class SuperMarker : AppCompatActivity() {
             val boxName = view.tv_name_edit.text
            // val boxPrice = view.tv_price_edit.text
 
-
+            //FALTA RESOLVER ERROR AL ENVIAR COMPRAS VACIAS DE NAME O PRICE
             view.button6.setOnClickListener {
                 val boxPriceD = view.tv_price_edit.text.toString()
                 val doublePrice: Double = boxPriceD.toDouble()
@@ -78,7 +78,7 @@ class SuperMarker : AppCompatActivity() {
 
 
         }
-
+        //Crear funcion para recorrer markerlist y ver si requiere llamdo inicial antes de cargar compras
         objetSuperMarker.markerList.forEach {
             total += it.price
             println(it.nameProduct + " " + it.price)
