@@ -46,17 +46,24 @@ class SuperMarker : AppCompatActivity() {
 
             //Obtener cajas de texto
             val boxName = view.tv_name_edit.text
-           // val boxPrice = view.tv_price_edit.text
+            val boxPrice = view.tv_price_edit.text
 
-            //FALTA RESOLVER ERROR AL ENVIAR COMPRAS VACIAS DE NAME O PRICE
-            view.button6.setOnClickListener {
-                val boxPriceD = view.tv_price_edit.text.toString()
-                val doublePrice: Double = boxPriceD.toDouble()
-                objetSuperMarkProvi.markerList.add(SuperMarkerModel("$boxName", doublePrice))
-                total += doublePrice
-                Toast.makeText(this, "Producto Agregado correctamente", Toast.LENGTH_SHORT).show()
 
-            }
+                view.button6.setOnClickListener {
+                    if (boxName.isNotEmpty() && boxPrice.isNotEmpty()){
+                        val boxPriceD = view.tv_price_edit.text.toString()
+                        val doublePrice: Double = boxPriceD.toDouble()
+                        objetSuperMarkProvi.markerList.add(SuperMarkerModel("$boxName", doublePrice))
+                        total += doublePrice
+                        Toast.makeText(this, "Producto Agregado correctamente", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss()
+                    }else{
+                        Toast.makeText(this, "Faltan campos", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+
 
         }
 

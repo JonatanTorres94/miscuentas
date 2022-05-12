@@ -48,7 +48,6 @@
         android:background="@color/green"
         android:drawableRight="@drawable/ic_credit_card"
         android:fontFamily="@font/oswald"
-        android:onClick="sendMessage"
         android:paddingRight="20dp"
         android:text="@string/history"
         android:textColor="@color/white"
