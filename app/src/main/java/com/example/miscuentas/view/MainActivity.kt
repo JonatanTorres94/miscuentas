@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             val intent:Intent = Intent(this, SuperMarker::class.java)
             startActivity(intent)
         }
+
     }
 
 

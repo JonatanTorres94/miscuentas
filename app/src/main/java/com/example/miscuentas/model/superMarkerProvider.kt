@@ -7,7 +7,7 @@ class superMarkerProvider {
             SuperMarkerModel("Mayonesa",120.82),
             SuperMarkerModel("Queso",326.36),
             SuperMarkerModel("Leche",85.45),
-            SuperMarkerModel("Cerveza",96.03),
+            SuperMarkerModel("Cerveza",96.034),
             SuperMarkerModel("Galletitas",20.00),
             SuperMarkerModel("Arroz1",87.73),
             SuperMarkerModel("Mayonesa1",125.82),

@@ -14,6 +14,7 @@ import com.example.miscuentas.model.SuperMarkerModel
 import com.example.miscuentas.model.superMarkerProvider
 import com.example.miscuentas.myAdapter.MyAdapterList
 import kotlinx.android.synthetic.main.activity_super_marker.*
+import kotlinx.android.synthetic.main.item_list_marker.view.*
 import kotlinx.android.synthetic.main.layout_viewall.view.*
 import kotlinx.android.synthetic.main.layput_diag.view.*
 import com.example.miscuentas.model.superMarkerProvider.Companion as modelSuperMarkerProvider
@@ -31,6 +32,7 @@ class SuperMarker : AppCompatActivity() {
         val objetSuperMarker = modelSuperMarkerProvider
         val objetSuperMarkProvi = superMarkerProvider
         var total = 0.0
+
 
 
         // Boton de agregar compra
@@ -64,9 +66,7 @@ class SuperMarker : AppCompatActivity() {
                 }
 
 
-
         }
-
 
         //println(total) ## VER TOTAL POR CONSOLA
 
@@ -88,8 +88,9 @@ class SuperMarker : AppCompatActivity() {
         //Crear funcion para recorrer markerlist y ver si requiere llamdo inicial antes de cargar compras
         objetSuperMarker.markerList.forEach {
             total += it.price
-            println(it.nameProduct + " " + it.price)
+            //println(it.nameProduct + " " + it.price)
         }
+
 
 
     }
@@ -101,6 +102,8 @@ class SuperMarker : AppCompatActivity() {
         recyclerView.adapter = MyAdapterList(modelSuperMarkerProvider.markerList)
 
     }
+
+
 
 
 }
