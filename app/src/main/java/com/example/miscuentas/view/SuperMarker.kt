@@ -31,9 +31,9 @@ class SuperMarker : AppCompatActivity() {
         initRecyclerView()
         val objetSuperMarker = modelSuperMarkerProvider
         val objetSuperMarkProvi = superMarkerProvider
-        var total = 0.0
 
-
+        getTotal(objetSuperMarker)
+        println("Resultado de funcion ${getTotal(objetSuperMarker)}")
 
         // Boton de agregar compra
         binding.button4.setOnClickListener {
@@ -50,51 +50,31 @@ class SuperMarker : AppCompatActivity() {
             val boxName = view.tv_name_edit.text
             val boxPrice = view.tv_price_edit.text
 
-
-                view.button6.setOnClickListener {
-                    if (boxName.isNotEmpty() && boxPrice.isNotEmpty()){
-                        val boxPriceD = view.tv_price_edit.text.toString()
-                        val doublePrice: Double = boxPriceD.toDouble()
-                        objetSuperMarkProvi.markerList.add(SuperMarkerModel("$boxName", doublePrice))
-                        total += doublePrice
-                        Toast.makeText(this, "Producto Agregado correctamente", Toast.LENGTH_SHORT).show()
-                        dialog.dismiss()
-                    }else{
-                        Toast.makeText(this, "Faltan campos", Toast.LENGTH_SHORT).show()
-                    }
-
+            view.button6.setOnClickListener {
+                if (boxName.isNotEmpty() && boxPrice.isNotEmpty()) {
+                    val boxPriceD = view.tv_price_edit.text.toString()
+                    val doublePrice: Double = boxPriceD.toDouble()
+                    objetSuperMarkProvi.markerList.add(SuperMarkerModel("$boxName", doublePrice))
+                    //total += doublePrice esto usaba antes de crear fucion getTotal
+                    Toast.makeText(this, "Producto Agregado correctamente", Toast.LENGTH_SHORT)
+                        .show()
+                    dialog.dismiss()
+                } else {
+                    Toast.makeText(this, "Faltan campos", Toast.LENGTH_SHORT).show()
                 }
-
-
+            }
         }
-
         //println(total) ## VER TOTAL POR CONSOLA
-
         //Boton de ver total
         binding.button5.setOnClickListener {
-
-
             val builder = AlertDialog.Builder(this)
             val view = layoutInflater.inflate(R.layout.layout_viewall, null)
-
             builder.setView(view)
-            view.tv_total.text = total.toString()
+            view.tv_total.text = getTotal(objetSuperMarker).toString()
             val dialog = builder.create()
             dialog.show()
-
-
-
         }
-        //Crear funcion para recorrer markerlist y ver si requiere llamdo inicial antes de cargar compras
-        objetSuperMarker.markerList.forEach {
-            total += it.price
-            //println(it.nameProduct + " " + it.price)
-        }
-
-
-
     }
-
 
     private fun initRecyclerView() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerList)
@@ -103,8 +83,13 @@ class SuperMarker : AppCompatActivity() {
 
     }
 
-
-
+    fun getTotal(objeT: modelSuperMarkerProvider): Double {
+        var total = 0.0
+        objeT.markerList.forEach {
+            total += it.price
+        }
+        return total
+    }
 
 }
 

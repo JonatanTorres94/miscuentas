@@ -31,7 +31,7 @@ class MyAdapterList(private val superMarkerList: List<SuperMarkerModel>) :
         holder.render(item)
         holder.buttonDelete.setOnClickListener {
             //Esto sirve para borrar la posicion que tiene el boton del recyclerview
-            var pos = holder.adapterPosition.toInt()
+            val pos = holder.adapterPosition.toInt()
             deleteItem(pos)
         }
     }
