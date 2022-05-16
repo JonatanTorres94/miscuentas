@@ -1,23 +1,13 @@
 package com.example.miscuentas.myAdapter
 
-import android.content.Intent.getIntent
-import android.content.Intent.makeMainActivity
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import android.widget.Toast
-import androidx.core.app.ActivityCompat.recreate
-import androidx.core.app.ActivityCompat.startActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.miscuentas.R
-import com.example.miscuentas.model.SuperMarkerModel
-import com.example.miscuentas.model.superMarkerProvider
-import com.example.miscuentas.view.SuperMarker
-import kotlinx.android.synthetic.main.activity_super_marker.view.*
+import com.example.miscuentas.model.SuperMarketModel
+import com.example.miscuentas.model.superMarketProvider
 
-class MyAdapterList(private val superMarkerList: List<SuperMarkerModel>) :
+class MyAdapterList(private val superMarketList: List<SuperMarketModel>) :
     RecyclerView.Adapter<ListHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListHolder {
@@ -27,7 +17,7 @@ class MyAdapterList(private val superMarkerList: List<SuperMarkerModel>) :
 
     // este metodo recorre los items y llamar al render
     override fun onBindViewHolder(holder: ListHolder, position: Int) {
-        val item = superMarkerList[position]
+        val item = superMarketList[position]
         holder.render(item)
         holder.buttonDelete.setOnClickListener {
             //Esto sirve para borrar la posicion que tiene el boton del recyclerview
@@ -36,10 +26,10 @@ class MyAdapterList(private val superMarkerList: List<SuperMarkerModel>) :
         }
     }
 
-    override fun getItemCount(): Int = superMarkerList.size
+    override fun getItemCount(): Int = superMarketList.size
 
     fun deleteItem(i: Int) {
-        superMarkerProvider.markerList.removeAt(i)
+        superMarketProvider.markerList.removeAt(i)
         notifyDataSetChanged()
     }
 

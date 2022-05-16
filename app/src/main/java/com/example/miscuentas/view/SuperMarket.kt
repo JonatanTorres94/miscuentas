@@ -2,25 +2,21 @@ package com.example.miscuentas.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.miscuentas.R
-import com.example.miscuentas.databinding.ActivityMainBinding
 import com.example.miscuentas.databinding.ActivitySuperMarkerBinding
-import com.example.miscuentas.model.SuperMarkerModel
-import com.example.miscuentas.model.superMarkerProvider
+import com.example.miscuentas.model.SuperMarketModel
+import com.example.miscuentas.model.superMarketProvider
 import com.example.miscuentas.myAdapter.MyAdapterList
-import kotlinx.android.synthetic.main.activity_super_marker.*
-import kotlinx.android.synthetic.main.item_list_marker.view.*
-import kotlinx.android.synthetic.main.layout_viewall.view.*
+import kotlinx.android.synthetic.main.layout_view_total.view.*
 import kotlinx.android.synthetic.main.layput_diag.view.*
-import com.example.miscuentas.model.superMarkerProvider.Companion as modelSuperMarkerProvider
+import com.example.miscuentas.model.superMarketProvider.Companion as modelSuperMarkerProvider
 
 
-class SuperMarker : AppCompatActivity() {
+class SuperMarket : AppCompatActivity() {
 
     private lateinit var binding: ActivitySuperMarkerBinding
 
@@ -30,7 +26,7 @@ class SuperMarker : AppCompatActivity() {
         setContentView(binding.root)
         initRecyclerView()
         val objetSuperMarker = modelSuperMarkerProvider
-        val objetSuperMarkProvi = superMarkerProvider
+        val objetSuperMarkProvi = superMarketProvider
 
         getTotal(objetSuperMarker)
         println("Resultado de funcion ${getTotal(objetSuperMarker)}")
@@ -54,7 +50,7 @@ class SuperMarker : AppCompatActivity() {
                 if (boxName.isNotEmpty() && boxPrice.isNotEmpty()) {
                     val boxPriceD = view.tv_price_edit.text.toString()
                     val doublePrice: Double = boxPriceD.toDouble()
-                    objetSuperMarkProvi.markerList.add(SuperMarkerModel("$boxName", doublePrice))
+                    objetSuperMarkProvi.markerList.add(SuperMarketModel("$boxName", doublePrice))
                     //total += doublePrice esto usaba antes de crear fucion getTotal
                     Toast.makeText(this, "Producto Agregado correctamente", Toast.LENGTH_SHORT)
                         .show()
@@ -68,7 +64,7 @@ class SuperMarker : AppCompatActivity() {
         //Boton de ver total
         binding.button5.setOnClickListener {
             val builder = AlertDialog.Builder(this)
-            val view = layoutInflater.inflate(R.layout.layout_viewall, null)
+            val view = layoutInflater.inflate(R.layout.layout_view_total, null)
             builder.setView(view)
             view.tv_total.text = getTotal(objetSuperMarker).toString()
             val dialog = builder.create()

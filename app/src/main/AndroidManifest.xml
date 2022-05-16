@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MisCuentas">
         <activity
-            android:name=".view.SuperMarker"
+            android:name=".view.SuperMarket"
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
