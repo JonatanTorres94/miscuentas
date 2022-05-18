@@ -22,6 +22,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.button2.setOnClickListener {
+            val intent: Intent = Intent(this, PurchaseHistory::class.java)
+            startActivity(intent)
+        }
+
     }
 
 
