@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/MisCuentas/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.196" />
         <entry key="..\:/MisCuentas/app/src/main/res/drawable/corners.xml" value="0.313" />
+        <entry key="..\:/MisCuentas/app/src/main/res/drawable/corners_rectangule.xml" value="0.311" />
+        <entry key="..\:/MisCuentas/app/src/main/res/drawable/cornes_rectangule.xml" value="0.311" />
         <entry key="..\:/MisCuentas/app/src/main/res/drawable/ic_bank.xml" value="0.355" />
         <entry key="..\:/MisCuentas/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.233" />
         <entry key="..\:/MisCuentas/app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.2185" />
@@ -24,7 +26,7 @@
         <entry key="..\:/MisCuentas/app/src/main/res/layout/layout_view_total.xml" value="0.36666666666666664" />
         <entry key="..\:/MisCuentas/app/src/main/res/layout/layout_viewall.xml" value="0.2848731884057971" />
         <entry key="..\:/MisCuentas/app/src/main/res/layout/layoutdialog.xml" value="0.5" />
-        <entry key="..\:/MisCuentas/app/src/main/res/layout/layput_diag.xml" value="0.67" />
+        <entry key="..\:/MisCuentas/app/src/main/res/layout/layput_diag.xml" value="0.2608695652173913" />
         <entry key="..\:/MisCuentas/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196" />
       </map>
     </option>

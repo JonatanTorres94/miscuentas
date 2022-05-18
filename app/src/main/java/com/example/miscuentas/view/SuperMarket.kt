@@ -2,6 +2,7 @@ package com.example.miscuentas.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -45,11 +46,36 @@ class SuperMarket : AppCompatActivity() {
             //Obtener cajas de texto
             val boxName = view.tv_name_edit.text
             val boxPrice = view.tv_price_edit.text
+            var result: Double?
+            var cont = 1
+
+            println(println("nombre de variable: ${boxPrice::class.simpleName}"))
+
+            //Boton + y -
+
+            view.iv_buttom_plus.setOnClickListener {
+                cont += 1
+                val contSt = cont.toString()
+                view.tv_amount.text = contSt
+            }
+
+            view.iv_buttom_less.setOnClickListener {
+                // con el if evitamos que puedan setearse valores negativos para cont
+                if (cont > 1){
+                    cont -= 1
+                    val contSt = cont.toString()
+                    view.tv_amount.text = contSt
+                }
+
+            }
+
 
             view.button6.setOnClickListener {
+
                 if (boxName.isNotEmpty() && boxPrice.isNotEmpty()) {
                     val boxPriceD = view.tv_price_edit.text.toString()
-                    val doublePrice: Double = boxPriceD.toDouble()
+                    val doublePrice: Double = boxPriceD.toDouble() * cont
+
                     objetSuperMarkProvi.markerList.add(SuperMarketModel("$boxName", doublePrice))
                     //total += doublePrice esto usaba antes de crear fucion getTotal
                     Toast.makeText(this, "Producto Agregado correctamente", Toast.LENGTH_SHORT)
@@ -59,6 +85,8 @@ class SuperMarket : AppCompatActivity() {
                     Toast.makeText(this, "Faltan campos", Toast.LENGTH_SHORT).show()
                 }
             }
+
+
         }
         //println(total) ## VER TOTAL POR CONSOLA
         //Boton de ver total
@@ -87,7 +115,10 @@ class SuperMarket : AppCompatActivity() {
         return total
     }
 
+
 }
+
+
 
 
 
