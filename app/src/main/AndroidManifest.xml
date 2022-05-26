@@ -17,6 +17,8 @@
 
         <activity android:name=".view.PurchaseHistory"
             android:exported="false" />
+        <activity android:name=".view.ActivityAuth"
+            android:exported="false" />
         <activity
             android:name=".view.MainActivity"
             android:exported="true">

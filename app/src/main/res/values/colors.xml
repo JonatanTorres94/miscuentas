@@ -11,4 +11,6 @@
     <color name="yellow">#CAB92A</color>
     <color name="blue">#283FBC</color>
     <color name="layputDiag">#9F3B7738</color>
+    <color name="azulFireClaro">#039BE5</color>
+    <color name="azulFireOscuro">#2C384A</color>
 </resources>

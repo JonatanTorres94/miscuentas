@@ -3,7 +3,7 @@
     <string name="valor">Valor</string>
     <string name="history">Historial de compras</string>
     <string name="supermercado">Supermercado</string>
-    <string name="creditos">Creditos</string>
+    <string name="creditos">Iniciar Sesion</string>
     <string name="agregar_compra">Agregar compra</string>
     <string name="ver_total">Ver Total</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -12,4 +12,8 @@
     <string name="nombre_del_producto">Nombre del producto</string>
     <string name="total">TOTAL:</string>
     <string name="agregar">Agregar</string>
+    <string name="acceder">Acceder</string>
+    <string name="registrar">Registrar</string>
+    <string name="correo">Correo</string>
+    <string name="password">Password</string>
 </resources>
